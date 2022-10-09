@@ -2,5 +2,17 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-  <h1>index.html</h1>
+  <a href="#" class="fw-bold" style="text-decoration: none;">{% comment %} 스타일 밑줄 제거 {% endcomment %}
+    <div class="card">
+      <div class="card-header">제목</div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>내용</p>
+          <footer class="blockquote-footer">Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </a>
 {% endblock %}

@@ -12,14 +12,30 @@
     {% block css %}{% endblock css %} 
   </head>
 
-  <body>
+  <body style="height: 10000ex;">
     <nav class="navbar navbar-light bg-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">기술블로그</a>
         {% comment %} 검색 아이콘 클릭 모달 검색창 {% endcomment %}
       </div>
     </nav>
-        {% block body %}{% endblock body %}
+    <nav class="nav flex-column align-items-end ">{% comment %} 상단고정? {% endcomment %}
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="{% url 'app1:index' %}">1번</a> {% comment %} index경로  {% endcomment %}
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">2번</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">3번</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">4번</a>
+      </li>
+    </nav>
+    <div class="container">
+      {% block body %}{% endblock body %}
+    </div>
   </body>
   {% bootstrap_javascript %}
 </html>
