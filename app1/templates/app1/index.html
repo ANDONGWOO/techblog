@@ -2,25 +2,45 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-  <a href="#" class="fw-bold" style="text-decoration: none;">{% comment %} 스타일 밑줄 제거 {% endcomment %}
-{% for i in app %}
-    <div class="card m-2">
-      <div class="card-header">{{ i.title }}</div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p>{{ i.content }}</p>
-        </blockquote>
-      </div>
-    </div>
-{% endfor %}
-  </a>
-  <div class="m-5 d-flex justify-content-center">
-    <nav aria-label="Page navigation example ">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">이전</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">다음</a></li>
-      </ul>
+<div class="d-flex">
+  <div style="width:10ex;">
+    <nav class="nav flex-column ">{% comment %} 상단고정? {% endcomment %}
+      <li class="nav-item ">
+        <a class="nav-link text-dark" aria-current="page" href="{% url 'app1:index' %}">메인</a> {% comment %} index경로  {% endcomment %}
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">2번</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">3번</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">4번</a>
+      </li>
     </nav>
   </div>
+  <div class="container">
+    <a href="#" class="fw-bold" style="text-decoration: none;">{% comment %} 스타일 밑줄 제거 {% endcomment %}
+  {% for i in app %}
+      <div class="card m-2 text-dark">
+        <div class="card-header">{{ i.title }}</div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{ i.content }}</p>
+          </blockquote>
+        </div>
+      </div>
+  {% endfor %}
+    </a>
+    <div class="m-5 d-flex justify-content-center">
+      <nav aria-label="Page navigation example ">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">이전</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">다음</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
 {% endblock %}
