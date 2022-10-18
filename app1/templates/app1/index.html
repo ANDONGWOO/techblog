@@ -2,9 +2,9 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<div class="d-flex">
+<div class="d-flex ">
   <div style="width:10ex;">
-    <nav class="nav flex-column ">{% comment %} 상단고정? {% endcomment %}
+    <nav class="nav flex-column position-fixed">{% comment %} 상단고정? {% endcomment %}
       <li class="nav-item ">
         <a class="nav-link text-dark" aria-current="page" href="{% url 'app1:index' %}">메인</a> {% comment %} index경로  {% endcomment %}
       </li>
