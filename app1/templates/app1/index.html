@@ -22,7 +22,7 @@
   <div class="container">
   {% for index_content in index_contents %}
       <div class="card m-2 text-dark">
-        <a class="card-header fw-bold" href="#" style="text-decoration: none;">{{ index_content.title }}</a>
+        <a class="card-header fw-bold" href="{% url 'app1:detail' index_content.pk %}" style="text-decoration: none;">{{ index_content.title }}</a>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <p>{{ index_content.content }}</p>
