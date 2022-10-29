@@ -9,3 +9,4 @@ class App1(models.Model):
     content=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
+    hits=models.PositiveIntegerField(default = 0)#조회 수 
