@@ -7,5 +7,5 @@ urlpatterns = [
     #app1/ 기본 
     path('', views.index, name='index'),
     path('<int:pk>/',views.detail, name='detail'),
-    
+    path('search/',views.search, name='search' ),#검색
 ]

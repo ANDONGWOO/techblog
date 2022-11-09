@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block body %}
+  {% if not search %}
+    <h1 class="">검색 없음</h1>
+  {% else %}
+    {% for i in search.all %}
+      <a class="" href="{% url 'app1:detail' i.pk %}">{{ i.title }}</a>
+      <hr>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

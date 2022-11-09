@@ -15,3 +15,13 @@ def detail(request, pk):#조회
         'detail_contents':detail_contents
     }
     return render(request, 'app1/detail.html', context)
+
+def search(request):#검색 
+    search= App1.objects.all().order_by('-pk')
+    q = request.POST.get('q',"")
+    if q:
+        search = search.filter(title__icontains=q)
+        
+        return render(request, 'app1/search.html',{'search':search, 'q':q})
+    else:
+        return render(request, 'app1/search.html')
