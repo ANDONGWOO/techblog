@@ -15,7 +15,7 @@
   <body>
       <nav class="navbar navbar-light bg-dark sticky-top">
         <div class="container-fluid d-flex">
-          <a class="navbar-brand text-white" href="#">기술블로그</a>
+          <a class="navbar-brand text-white" href="{% url 'app1:index' %}">기술블로그</a>
           <form class="d-flex" role="search" action="{% url 'app1:search' %}" method="POST">
             {% csrf_token %}
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ q }}">

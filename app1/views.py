@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from.models import App1
+from django.db.models import Q
 # Create your views here.
 
 def index(request):#괸리자 페이지 작성 내용
@@ -18,9 +19,9 @@ def detail(request, pk):#조회
 
 def search(request):#검색 
     search= App1.objects.all().order_by('-pk')
-    q = request.POST.get('q',"")
+    q = request.POST.get('q')
     if q:
-        search = search.filter(title__icontains=q)
+        search = search.filter(Q(title__icontains=q)|Q(content__icontains=q))
         
         return render(request, 'app1/search.html',{'search':search, 'q':q})
     else:
