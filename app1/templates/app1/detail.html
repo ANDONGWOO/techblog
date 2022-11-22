@@ -2,7 +2,9 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-  <h1>{{ detail_contents.title }}</h1>
-  <hr>
-  <p>{{ detail_contents.content }}</p>
+  <div class="m-5">
+    <h1>{{ detail_contents.title }}</h1>
+    <hr>
+    <p>{{ detail_contents.content }}</p>
+  </div>
 {% endblock %}

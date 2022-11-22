@@ -21,14 +21,11 @@
   </div>
   <div class="container">
   {% for index_content in index_contents %}
-      <div class="card m-2 text-dark">
-        <a class="card-header fw-bold" href="{% url 'app1:detail' index_content.pk %}" style="text-decoration: none;">{{ index_content.title }}</a>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>{{ index_content.content }}</p>
-          </blockquote>
-        </div>
-      </div>
+  <div class="card-body"> 
+    <a class="card-header fw-bold" href="{% url 'app1:detail' index_content.pk %}" style="text-decoration: none;"><h2>{{ index_content.title }}</h2></a>
+    <p class="card-text">{{ index_content.content }}</p>
+  </div>
+  <hr>
   {% endfor %}
     <div class="m-5 d-flex justify-content-center">
       <nav aria-label="Page navigation example ">
