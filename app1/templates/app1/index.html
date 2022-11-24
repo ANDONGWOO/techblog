@@ -9,19 +9,20 @@
         <a class="nav-link text-dark" aria-current="page" href="{% url 'app1:index' %}">메인</a> {% comment %} index경로  {% endcomment %}
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="https://github.com/ANDONGWOO/TIL">링크</a>
+        <a class="nav-link text-dark" href="https://github.com/ANDONGWOO/TIL">깃허브</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#">3번</a>
+        <a class="nav-link text-dark" href="http://yeoldybean-env.eba-ghf297im.ap-northeast-2.elasticbeanstalk.com/">프로젝트2</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-dark" href="#">4번</a>
       </li>
     </nav>
   </div>
-  <div class="container">
+  <div class="container m-5">
   {% for index_content in index_contents %}
-  <div class="card-body"> 
+  <div class="card-body">
+    <p class="card-text">{{ index_content.created_at }}</p>
     <a class="card-header fw-bold" href="{% url 'app1:detail' index_content.pk %}" style="text-decoration: none;"><h2>{{ index_content.title }}</h2></a>
     <p class="card-text">{{ index_content.content }}</p>
   </div>
@@ -29,7 +30,7 @@
   {% endfor %}
     <div class="m-5 d-flex justify-content-center">
       <nav aria-label="Page navigation example ">
-        <ul class="pagination">
+        <ul class="pagination">{% comment %} #페이지 10 {% endcomment %}
           <li class="page-item"><a class="page-link" href="#">이전</a></li>
           <li class="page-item"><a class="page-link" href="#">1</a></li>
           <li class="page-item"><a class="page-link" href="#">다음</a></li>
