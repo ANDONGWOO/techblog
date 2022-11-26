@@ -15,8 +15,10 @@ def detail(request, pk):#조회
     context={
         'detail_contents':detail_contents
     }
-    return render(request, 'app1/detail.html', context)
-
+    response = render(request, 'app1/detail.html', context)
+    detail_contents.hits +=1
+    detail_contents.save()
+    return response
 def search(request):#검색 
     search= App1.objects.all().order_by('-pk')
     q = request.POST.get('q')

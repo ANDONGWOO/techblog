@@ -3,7 +3,10 @@
 
 {% block body %}
   <div class="m-5">
-    <h1>{{ detail_contents.title }}</h1>
+    <div class="d-flex justify-content-between">
+      <h1>{{ detail_contents.title }}</h1>
+      <p>조회수:{{ detail_contents.hits }}</p>
+    </div>
     <hr>
     <p>{{ detail_contents.created_at }}</p>
     <p>{{ detail_contents.content }}</p>
