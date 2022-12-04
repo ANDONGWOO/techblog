@@ -5,10 +5,13 @@
   <div class="m-5">
     <div class="d-flex justify-content-between">
       <h1>{{ detail_contents.title }}</h1>
-      <p>조회수:{{ detail_contents.hits }}</p>
+      <div class="d-flex">
+        <p>조회수:{{ detail_contents.hits }}</p>|
+        <p>{{ detail_contents.created_at }}</p>
+      </div>
     </div>
     <hr>
-    <p>{{ detail_contents.created_at }}</p>
+
     <p>{{ detail_contents.content }}</p>
   </div>
 {% endblock %}
