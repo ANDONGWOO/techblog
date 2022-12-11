@@ -3,7 +3,7 @@ from.models import App1
 from django.db.models import Q
 # Create your views here.
 
-def index(request):#괸리자 페이지 작성 내용
+def index(request):#목록
     index_contents = App1.objects.all().order_by('-pk')#최신순
     context={
         'index_contents':index_contents
