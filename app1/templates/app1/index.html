@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
-
+{% load filter %}
 {% block body %}
 <div class="d-flex">
   <div style="width:10ex;">
@@ -24,7 +24,7 @@
   <div class="card-body">
     <p class="card-text">{{ index_content.created_at }}</p>
     <a class="card-header fw-bold" href="{% url 'app1:detail' index_content.pk %}" style="text-decoration: none;"><h2>{{ index_content.title }}</h2></a>
-    <p class="card-text">{{ index_content.content }}</p>
+    <p class="card-text">{{ index_content.content|mark }}</p>
   </div>
   <hr>
   {% endfor %}

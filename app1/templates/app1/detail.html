@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load filter %}
 {% load django_bootstrap5 %}
 
 {% block body %}
@@ -12,6 +13,6 @@
     </div>
     <hr>
 
-    <p>{{ detail_contents.content }}</p>
+    <p>{{ detail_contents.content|mark }}</p>
   </div>
 {% endblock %}
